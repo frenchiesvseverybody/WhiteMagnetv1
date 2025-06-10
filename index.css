@@ -1,0 +1,189 @@
+.start-button {
+  z-index: 20;
+  display: none;
+  /*/
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: absolute;
+  top: 24vh;
+  /*/
+
+  position: absolute;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  width: 40%;
+
+  /*
+  position: absolute;
+  top: 24vh;
+  
+  left: 40vw;
+  align-self: center;
+  */
+}
+
+.start-button:active {
+  transform: scale(0.98);
+}
+
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text for readability */
+  overflow: hidden; /* Prevent page scrolling when popup is active */
+}
+
+/* Fullscreen popup container */
+#popupcontainer {
+  display: none; /* Initially hide the popup */
+  position: fixed; /* Fullscreen overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Align content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content to the top */
+  z-index: 1000; /* Ensure it appears on top */
+  overflow-y: auto; /* Allow scrolling if content exceeds screen size */
+  background-color: 000;
+}
+
+/* Popup content styling */
+.scenecontent {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+  max-width: 1000px; /* Ensure content is never larger than 1000px */
+  width: 90%; /* Ensure content doesn't take full width on large screens */
+}
+
+/* Consistent font size for all text inside popup content */
+h1,
+h2,
+p {
+  font-size: 1.5em; /* Set a fixed font size */
+  margin: 10px 0; /* Add spacing between text */
+}
+
+/* Centered button */
+button {
+  background-color: #ffffff; /* White button */
+  color: #000000; /* Black text on button */
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.5em; /* Consistent font size for button */
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for buttons */
+button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  opacity: 0.9;
+}
+
+/* Active effect for buttons */
+button:active {
+  transform: scale(0.98); /* Shrink slightly when clicked */
+}
+
+/* Container for the GIF or image */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 10%; /* Ensure the content starts from top */
+}
+
+/* Image inside popup container with specific ID */
+#popupimg {
+  width: 80%; /* Default for larger screens */
+  max-width: 600px; /* Limit max size for large screens */
+}
+
+#refreshimg,
+#errorimg,{
+  width: 50%; /* Default for larger screens */
+  max-width: 400px; /* Limit max size for large screens */
+}
+/* Adjust image size for smaller screens (mobile) */
+@media (max-width: 768px) {
+  #popupimg {
+    width: 80%; /* 80% width on mobile */
+    max-width: 100%; /* Ensure image doesn't overflow */
+  }
+  #refreshimg,
+  #errorimg {
+    width: 40%; /* 80% width on mobile */
+    max-width: 100%; /* Ensure image doesn't overflow */
+  }
+#heyyou {
+    width: 60%; /* 80% width on mobile */
+    max-width: 100%; /* Ensure image doesn't overflow */
+  }
+  /* Adjust heading and text font sizes for mobile */
+  h1,
+  h2,
+  p {
+    font-size: 1.2em; /* Consistent font size for smaller screens */
+  }
+
+  button {
+    font-size: 1.2em; /* Adjust button size for smaller screens */
+    padding: 12px 20px; /* Reduce padding */
+  }
+}
+
+#refresh-page-image,
+#errorimage{
+  position: fixed; /* Fullscreen overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Align content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  z-index: 1000; /* Ensure it appears on top */
+  overflow-y: auto; /* Allow scrolling if content exceeds screen size */
+  background-color: 000;
+}
+#status-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+  z-index: 999;
+  display: none; /* hidden by default */
+  width: 70%;           /* fixed width */
+  height: auto;
+  box-sizing: border-box;
+}
