@@ -1,22 +1,22 @@
 <html>
   <head>
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '944218417170643');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=944218417170643&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+        <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '944218417170643');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=944218417170643&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -319,7 +319,38 @@
         ></a-entity>
       </a-entity>
     </a-scene>
+
+    <!-- Button image (hidden initially) -->
+    <img
+      id="start-button-id"
+      src="assets/video game button.png"
+      style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:2147483647;width:150px;height:auto;cursor:pointer;"
+    />
+
+    <script>
+      (function () {
+        var SHOW_DELAY_MS = 25000; // 25 seconds
+        function onReady() {
+          var btn = document.getElementById("start-button-id");
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            // use existing helper
+            window.location.href = (typeof changeTheExternalUrl === 'function')
+              ? changeTheExternalUrl()
+              : "https://frenchiesvseverybody.github.io/FvEGame2/";
+          });
+          setTimeout(function () {
+            btn.style.display = "block";
+          }, SHOW_DELAY_MS);
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", onReady);
+        } else {
+          onReady();
+        }
+      })();
+    </script>
+
     <script></script>
   </body>
 </html>
-
